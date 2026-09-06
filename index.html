@@ -39,7 +39,6 @@
   }
 
   body {
-    /* Classic 90s Tiled Image Background with solid fallback */
     background-color: var(--bg-main);
     background-image: url('bg_pattern.gif');
     background-repeat: repeat;
@@ -55,12 +54,10 @@
     margin: 0 auto;
     padding: 16px;
     background: var(--card-bg);
-    /* Classic 3D Outset Bevel Border Style */
     border: 4px outset #cccccc;
     box-shadow: 5px 5px 0px #000000;
   }
 
-  /* Moving Header Marquee Banner */
   .marquee-box {
     background: #000000;
     border: 2px inset #ffffff;
@@ -71,7 +68,6 @@
     font-family: "Courier New", monospace;
   }
 
-  /* Header Box */
   .header-box {
     text-align: center;
     background: var(--navy-header);
@@ -113,7 +109,6 @@
     max-width: 100%;
   }
 
-  /* Center Main Image with Vintage Frame */
   .img-oficio {
     width: 100%;
     max-width: 280px;
@@ -125,7 +120,6 @@
     background: #ffffff;
   }
 
-  /* Links in retro inset panel style */
   .btn-oficio {
     display: block;
     margin-bottom: 16px;
@@ -162,7 +156,6 @@
     padding-top: 12px;
   }
 
-  /* 90s Web Badges Container */
   .badges-row {
     margin-top: 12px;
     text-align: center;
@@ -207,7 +200,7 @@
   
   <p class="subtitulo red"><em>"O Senhor seja a tua luz e a tua salvação."</em></p>
 
-  <img src="fotofundooficio.png?v=2" alt="Ofício Diário" class="img-oficio" width="320" height="320">
+  <img src="fotofundooficio.gif" alt="Ofício Diário" class="img-oficio" width="320" height="320">
 
   <img src="cross_divider.gif" alt="---" class="divider-gif">
 
@@ -239,7 +232,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('bg-audio');
     
-    // 1. Pause audio as soon as the user hides/leaves the app or locks their device
     document.addEventListener('visibilitychange', () => {
       const audio = document.getElementById('bg-audio');
       if (document.hidden) {
@@ -249,17 +241,14 @@
       }
     });
 
-    // 2. Extra safety for mobile browser page closure or navigation away
     window.addEventListener('pagehide', () => {
       const audio = document.getElementById('bg-audio');
       if (audio) audio.pause();
     });
 
-    // 3. Force muted playback immediately on load
     audio.muted = true;
     audio.play().catch(() => {});
 
-    // 4. Unmute and play on any scroll, swipe, touch, or click
     const unlockAudio = () => {
       audio.muted = false;
       if (audio.paused) {
@@ -282,7 +271,6 @@
     window.addEventListener('scroll', unlockAudio);
     window.addEventListener('wheel', unlockAudio);
 
-    // Handles returning to page via browser Back button
     window.addEventListener('pageshow', () => {
       if (audio.paused) audio.play().catch(() => {});
     });
@@ -290,4 +278,4 @@
 </script>
 </body>
 
-</html>
+</html> 
