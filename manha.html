@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000066">
+<meta name="theme-color" content="#87ceeb">
 <link rel="apple-touch-icon" href="icon-512.png">
 
 <script>
@@ -15,19 +15,18 @@
   }
 </script>
 <meta charset="utf-8">
-<title>Ofício Diário ~ Web 1.0 ~</title>
+<title>Ofício Diário - Com leituras do LCR (Ano A)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root {
-    --bg-main: #000044;
-    --card-bg: #f4f0e6;
-    --navy-header: #000066;
-    --gold-primary: #ffff00;
-    --text-primary: #000000;
-    --text-rubric: #cc0000;
-    --accent-blue: #0000cc;
-    --border-bevel-light: #ffffff;
-    --border-bevel-dark: #888888;
+    --bg-main: #87ceeb;
+    --card-bg: #fffff0; /* Branco marfim clássico */
+    --banner-yellow: #ffff00;
+    --text-primary: #000080; /* Azul Marinho Web 1.0 */
+    --text-rubric: #cc0000; /* Vermelho rubrica */
+    --accent-blue: #0000ff;
+    --accent-green: #008000;
+    --border-bevel: #d4d0c8; /* Cinza clássico Windows 98 */
   }
 
   * {
@@ -37,32 +36,32 @@
   }
 
   body {
-    /* Fundo de céu estilo anos 90 com fallback sólido */
+    /* Fundo de céu diurno com papel de parede repetido */
     background-color: var(--bg-main);
     background-image: url('bg_sky.gif');
     background-repeat: repeat;
     color: var(--text-primary);
-    font-family: "Comic Sans MS", "Tahoma", "Courier New", sans-serif;
+    font-family: "Comic Sans MS", "Tahoma", "Verdana", sans-serif;
     line-height: 1.5;
-    padding: 10px;
+    padding: 12px;
     font-size: 0.95rem;
   }
 
   #stuffing {
     max-width: 780px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 20px;
     background: var(--card-bg);
-    /* Borda 3D Outset estilo clássico */
-    border: 4px outset #cccccc;
-    box-shadow: 5px 5px 0px #000000;
+    /* Borda 3D no estilo janela clássica */
+    border: 4px outset #ffffff;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
   }
 
-  /* Banner Superior estilo Letreiro Marquee */
+  /* Moving Header Marquee Banner estilo portal 2000 */
   .marquee-box {
-    background: #000000;
-    border: 2px inset #ffffff;
-    color: var(--gold-primary);
+    background: var(--banner-yellow);
+    border: 2px inset var(--border-bevel);
+    color: #000000;
     padding: 6px;
     margin-bottom: 16px;
     font-weight: bold;
@@ -71,10 +70,10 @@
 
   .header-box {
     text-align: center;
-    background: var(--navy-header);
-    color: #ffffff;
-    padding: 12px;
-    border: 3px outset #6666ff;
+    background: #e6f2ff;
+    color: var(--text-primary);
+    padding: 10px;
+    border: 3px ridge #99ccff;
     margin-bottom: 20px;
   }
 
@@ -85,28 +84,35 @@
 
   .divider-gif {
     display: block;
-    margin: 16px auto;
+    margin: 20px auto;
     max-width: 100%;
   }
 
   /* Headings & Typography */
   h1 {
-    font-size: 1.3rem;
-    color: var(--gold-primary);
+    font-size: 1.35rem;
+    color: #ffffff;
     margin: 24px 0 12px 0;
-    padding: 6px;
-    background-color: var(--navy-header);
-    border: 2px inset #ffffff;
+    padding: 6px 10px;
+    background-color: #0055ff;
+    border: 2px outset #ffffff;
     text-transform: uppercase;
     font-family: "Tahoma", sans-serif;
+    text-shadow: 1px 1px #000080;
   }
 
   h2 {
-    font-size: 1.1rem;
-    color: var(--accent-blue);
-    margin: 16px 0 10px 0;
+    font-size: 1.15rem;
+    color: var(--accent-green);
+    margin: 18px 0 10px 0;
     font-weight: bold;
-    border-bottom: 1px dotted var(--accent-blue);
+    border-bottom: 2px dashed #99cc99;
+  }
+
+  h3 {
+    font-size: 1.0rem;
+    margin: 16px 0 8px 0;
+    color: var(--text-primary);
   }
 
   p {
@@ -116,6 +122,7 @@
 
   .red {
     color: var(--text-rubric);
+    font-weight: bold;
   }
 
   em .red, .red em {
@@ -126,26 +133,26 @@
   .indent2 { padding-left: 40px; display: block; }
   .indent3 { padding-left: 60px; display: block; }
 
-  a:link { color: #0000cc; text-decoration: underline; }
-  a:visited { color: #880088; text-decoration: underline; }
-  a:hover { color: #000000; background-color: #ffff00; text-decoration: none; }
+  a:link { color: var(--accent-blue); text-decoration: underline; }
+  a:visited { color: #800080; text-decoration: underline; }
+  a:hover { color: #ff0000; background-color: var(--banner-yellow); text-decoration: none; }
 
   /* Date Selector & Subheader */
   .seletor-data {
-    background: #ffffff;
-    padding: 12px;
-    border: 3px inset #cccccc;
+    background: #e6e6e6;
+    padding: 10px;
+    border: 3px inset #ffffff;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    font-family: "Courier New", monospace;
-    font-weight: bold;
+    font-family: "Tahoma", sans-serif;
   }
 
   .blue-label {
-    color: var(--accent-blue);
+    color: var(--text-primary);
+    font-weight: bold;
     font-size: 0.95rem;
   }
 
@@ -155,26 +162,27 @@
     padding: 4px 8px;
     background: #ffffff;
     border: 2px inset #888888;
-    color: var(--text-primary);
+    color: #000000;
     outline: none;
   }
 
   .subcabecalho-info {
-    background: #000000;
-    color: #00ffff;
+    background: #ffffcc;
+    color: #000000;
     padding: 10px;
-    border: 2px inset #ffffff;
-    font-size: 0.9rem;
+    border: 2px solid #ffcc00;
+    font-size: 0.95rem;
     line-height: 1.4;
     text-align: center;
     margin-bottom: 20px;
-    font-family: "Courier New", monospace;
+    font-family: "Tahoma", sans-serif;
+    font-weight: bold;
   }
 
   /* Sunday Card */
   .card-domingo {
     background: #ffffff;
-    border: 3px ridge var(--text-rubric);
+    border: 4px ridge #ff3333;
     padding: 16px;
     margin: 20px 0;
   }
@@ -191,7 +199,7 @@
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border: 3px inset #cccccc;
+    border: 3px inset #888888;
     margin: 16px 0;
     background: #000;
   }
@@ -208,23 +216,24 @@
   /* About Section */
   .sobre-projeto {
     margin-top: 32px;
-    padding: 12px;
-    background: #ffffff;
-    border: 2px groove #cccccc;
-    font-size: 0.88rem;
+    padding: 14px;
+    background: #f0f8ff;
+    border: 2px groove #b0c4de;
+    font-size: 0.9rem;
   }
 
   .sobre-projeto h2 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-rubric);
+    border-bottom: none;
   }
 
   .img-lutero {
-    max-width: 130px;
+    max-width: 140px;
     height: auto;
     display: block;
     margin: 12px auto;
-    border: 3px ridge var(--navy-header);
+    border: 3px ridge #0055ff;
     padding: 2px;
     background: #fff;
   }
@@ -232,9 +241,9 @@
   footer {
     text-align: center;
     font-size: 0.8rem;
-    color: #444444;
+    color: #555555;
     margin-top: 24px;
-    border-top: 2px dashed #888888;
+    border-top: 2px dashed #999999;
     padding-top: 12px;
   }
 
@@ -250,11 +259,11 @@
 
   @media only screen and (max-width: 600px) {
     body {
-      padding: 2px;
+      padding: 4px;
     }
 
     #stuffing {
-      padding: 8px;
+      padding: 10px;
     }
 
     .seletor-data {
@@ -271,17 +280,18 @@
 <body>
 <div id="stuffing">
 
+  <!-- Marquee Banner Amarelo Diurno -->
   <div class="marquee-box">
     <marquee behavior="scroll" direction="left" scrollamount="4">
       <img src="welcome_globe.gif" alt="Globe" class="retro-gif" width="16" height="16"> 
-      +++ Bem-vindo ao Ofício Diário ~ Oração da Manhã e Leituras do RCL +++
+      +++ Bem-vindo ao Ofício Diário ~ Oração da Manhã e Leituras Bíblicas do RCL +++
     </marquee>
   </div>
 
   <div class="header-box">
-    <img src="sun.gif" alt="Sun" class="retro-gif" width="24" height="24">
-    <h1 style="display: inline; vertical-align: middle; margin: 0 8px; background: none; border: none;">Ofício Diário</h1>
-    <img src="sun.gif" alt="Sun" class="retro-gif" width="24" height="24">
+    <img src="sun.gif" alt="Sun" class="retro-gif" width="28" height="28">
+    <strong style="font-size: 1.3rem; margin: 0 8px; vertical-align: middle;">Ofício Diário</strong>
+    <img src="sun.gif" alt="Sun" class="retro-gif" width="28" height="28">
   </div>
 
   <div class="seletor-data">
@@ -336,7 +346,7 @@
   </div>
 
   <div id="conteudo-semana">
-    <h1><img src="sun.gif" alt="*" class="retro-gif" width="20" height="20"> Invocação</h1>
+    <h1><img src="sun.gif" alt="*" class="retro-gif" width="22" height="22"> Ofício Diário</h1>
 
     <p class="red"><em>Todos juntos</em></p>
     <p>
@@ -383,7 +393,7 @@
 
     <p class="red"><em>Antes da leitura do Salmo</em></p>
     <p>
-  Ó Deus bondoso e misericordioso, que pela tua santa Palavra guias os passos do teu povo nos caminhos da vida: concede-nos bom entendimento de teus ensinamentos. Abre os nossos olhos e corações para que conheçamos os teus mandamentos e os guardemos com fidelidade até o fim, por Jesus Cristo, nosso Senhor. Amém.
+Ó Deus bondoso e misericordioso, que pela tua santa Palavra guias os passos do teu povo nos caminhos da vida: concede-nos bom entendimento de teus ensinamentos. Abre os nossos olhos e corações para que conheçamos os teus mandamentos e os guardemos com fidelidade até o fim, por Jesus Cristo, nosso Senhor. Amém.
     </p>
 
     <div id="container-salmo-rcl">
@@ -396,7 +406,7 @@
 
     <p class="red"><em>Antes das leituras</em></p>
     <p>
-  Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a graça do teu Reino: ilumina a nossa mente e abre o nosso coração. Concede que a tua Palavra habite ricamente em nós, transforme a nossa vida e nos conduza em verdadeira fé e obediência, por Jesus Cristo, nosso Salvador. Amém.
+Senhor Deus, Pai de amor e luz, que na tua palavra nos revelas a tua vontade e a graça do teu Reino: ilumina a nossa mente e abre o nosso coração. Concede que a tua Palavra habite ricamente em nós, transforme a nossa vida e nos conduza em verdadeira fé e obediência, por Jesus Cristo, nosso Salvador. Amém.
     </p>
 
     <div id="container-leituras">
@@ -494,7 +504,7 @@
 
     <h2>Ação de Graças</h2>
     <p>
-  Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém. </p>
+Deus bondoso e Pai amado, dador de todo bom dom, que nos acolhes incondicionalmente por tua graça e nos sustentas a cada dia: rendemos-te graças por tua fidelidade inabalável, mesmo quando somos infiéis. Obrigado pelo pão na mesa, pela tua Palavra que nos corrige e consola, e pelo perdão que renova as nossas vidas. Acolhe o nosso louvor e faze com que a gratidão por teu amor immerecido se transforme em serviço humilde, partilha generosa e amor sincero ao próximo. Por Jesus Cristo, nosso Senhor, que contigo e com o Espírito Santo vive e reina de eternidade a eternidade. Amém. </p>
 
     <img src="cross_divider.gif" alt="---" class="divider-gif">
 
@@ -1115,3 +1125,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
