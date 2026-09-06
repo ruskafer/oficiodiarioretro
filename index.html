@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000066">
+<link rel="apple-touch-icon" href="icon-512.png">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('PWA Service Worker Registrado com Sucesso!'))
+        .catch((err) => console.log('Falha ao registrar Service Worker:', err));
+    });
+  }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ofício Diário ~ Web 1.0 ~</title>
+
+<style>
+  :root {
+    --bg-main: #000044;
+    --card-bg: #f4f0e6;
+    --navy-header: #000066;
+    --gold-primary: #ffff00;
+    --text-primary: #000000;
+    --text-rubric: #cc0000;
+    --accent-blue: #0000cc;
+    --border-bevel-light: #ffffff;
+    --border-bevel-dark: #888888;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    /* Classic 90s Tiled Image Background with solid fallback */
+    background-color: var(--bg-main);
+    background-image: url('bg_pattern.gif');
+    background-repeat: repeat;
+    color: var(--text-primary);
+    font-family: "Comic Sans MS", "Tahoma", "Courier New", sans-serif;
+    line-height: 1.5;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  #stuffing {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 16px;
+    background: var(--card-bg);
+    /* Classic 3D Outset Bevel Border Style */
+    border: 4px outset #cccccc;
+    box-shadow: 5px 5px 0px #000000;
+  }
+
+  /* Moving Header Marquee Banner */
+  .marquee-box {
+    background: #000000;
+    border: 2px inset #ffffff;
+    color: var(--gold-primary);
+    padding: 6px;
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+  }
+
+  /* Header Box */
+  .header-box {
+    text-align: center;
+    background: var(--navy-header);
+    color: #ffffff;
+    padding: 12px;
+    border: 3px outset #6666ff;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    color: var(--gold-primary);
+    margin: 4px 0;
+    text-transform: uppercase;
+    font-family: "Tahoma", sans-serif;
+    text-shadow: 2px 2px #000000;
+  }
+
+  p.subtitulo {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+
+  .red {
+    color: var(--text-rubric);
+  }
+
+  .retro-gif {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .divider-gif {
+    display: block;
+    margin: 16px auto;
+    max-width: 100%;
+  }
+
+  /* Center Main Image with Vintage Frame */
+  .img-oficio {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 4px ridge var(--accent-blue);
+    padding: 2px;
+    background: #ffffff;
+  }
+
+  /* Links in retro inset panel style */
+  .btn-oficio {
+    display: block;
+    margin-bottom: 16px;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 3px inset #cccccc;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .btn-oficio:hover {
+    background: #ffffcc;
+    border-color: var(--accent-blue);
+  }
+
+  .btn-oficio strong {
+    color: var(--accent-blue);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #444444;
+    margin-top: 24px;
+    border-top: 2px dashed #888888;
+    padding-top: 12px;
+  }
+
+  /* 90s Web Badges Container */
+  .badges-row {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .badges-row img {
+    margin: 0 4px;
+    vertical-align: middle;
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      padding: 2px;
+    }
+
+    #stuffing {
+      padding: 8px;
+    }
+
+    .btn-oficio {
+      padding: 12px;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div id="stuffing">
+
+  <div class="marquee-box">
+    <marquee behavior="scroll" direction="left" scrollamount="4">
+      <img src="welcome_globe.gif" alt="Globe" class="retro-gif" width="16" height="16"> 
+      +++ Bem-vindo ao portal do Ofício Diário ~ Oração, Leitura Bíblica e Devoção +++
+    </marquee>
+  </div>
+
+  <div class="header-box">
+    <img src="sun.gif" alt="Sun" class="retro-gif" width="24" height="24">
+    <h1 style="display: inline; vertical-align: middle; margin: 0 8px;">Ofício Diário</h1>
+    <img src="sun.gif" alt="Sun" class="retro-gif" width="24" height="24">
+  </div>
+  
+  <p class="subtitulo red"><em>"O Senhor seja a tua luz e a tua salvação."</em></p>
+
+  <img src="fotofundooficio.png?v=2" alt="Ofício Diário" class="img-oficio" width="320" height="320">
+
+  <img src="cross_divider.gif" alt="---" class="divider-gif">
+
+  <a href="manha.html" class="btn-oficio">
+    <strong><img src="arrow_right.gif" alt="->" class="retro-gif"> Ofício Diário (com leituras)</strong>
+    Roteiro completo para a oração diária com leituras bíblicas do Lecionário Comum Revisado.
+  </a>
+
+  <a href="noite.html" class="btn-oficio">
+    <strong><img src="arrow_right.gif" alt="->" class="retro-gif"> Breve Ofício para Encerrar o Dia</strong>
+    Oração para recolhimento, reflexão e descanso.
+  </a>
+
+  <footer>
+    <p><img src="email.gif" alt="Mail" class="retro-gif"> Organizado e mantido com carinho por Daniel Augusto Ribeiro</p>
+    <p style="margin-top: 4px; font-style: italic;">Oferecido gratuitamente para o fortalecimento da vida de oração.</p>
+
+    <div class="badges-row">
+      <img src="button_ie.gif" alt="Best viewed in Internet Explorer" width="88" height="31">
+      <img src="button_notepad.gif" alt="Made with Notepad" width="88" height="31">
+    </div>
+  </footer>
+
+</div>
+
+<audio id="bg-audio" src="nadateturbe.mp3" loop muted></audio>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-audio');
+    
+    // 1. Pause audio as soon as the user hides/leaves the app or locks their device
+    document.addEventListener('visibilitychange', () => {
+      const audio = document.getElementById('bg-audio');
+      if (document.hidden) {
+        audio.pause();
+      } else {
+        audio.play().catch(() => {});
+      }
+    });
+
+    // 2. Extra safety for mobile browser page closure or navigation away
+    window.addEventListener('pagehide', () => {
+      const audio = document.getElementById('bg-audio');
+      if (audio) audio.pause();
+    });
+
+    // 3. Force muted playback immediately on load
+    audio.muted = true;
+    audio.play().catch(() => {});
+
+    // 4. Unmute and play on any scroll, swipe, touch, or click
+    const unlockAudio = () => {
+      audio.muted = false;
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      }
+      removeListeners();
+    };
+
+    function removeListeners() {
+      window.removeEventListener('click', unlockAudio);
+      window.removeEventListener('touchstart', unlockAudio);
+      window.removeEventListener('touchmove', unlockAudio);
+      window.removeEventListener('scroll', unlockAudio);
+      window.removeEventListener('wheel', unlockAudio);
+    }
+
+    window.addEventListener('click', unlockAudio);
+    window.addEventListener('touchstart', unlockAudio);
+    window.addEventListener('touchmove', unlockAudio);
+    window.addEventListener('scroll', unlockAudio);
+    window.addEventListener('wheel', unlockAudio);
+
+    // Handles returning to page via browser Back button
+    window.addEventListener('pageshow', () => {
+      if (audio.paused) audio.play().catch(() => {});
+    });
+  });
+</script>
+</body>
+
+</html>
